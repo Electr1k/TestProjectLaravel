@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Main;
+namespace App\Http\Controllers\Web\Main;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
-use App\Services\CityParser;
+use App\Services\City\Parser;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -17,7 +17,7 @@ class IndexController extends Controller
 
         $cities = City::all();
         if (empty($cities)){
-            $parser = new CityParser();
+            $parser = new Parser();
             $parser->parseCities();
             $cities = City::all();
         }

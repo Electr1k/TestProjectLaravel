@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\City;
 
 use App\Models\City;
 use Illuminate\Support\Facades\Http;
 
-class CityParser
+class Parser
 {
     public function parseCities()
     {

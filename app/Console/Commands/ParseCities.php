@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\CityParser;
+use App\Services\City\Parser;
 use Illuminate\Console\Command;
 
 class ParseCities extends Command
@@ -26,7 +26,7 @@ class ParseCities extends Command
      */
     public function handle()
     {
-        $parser = new CityParser();
+        $parser = new Parser();
         $parser->parseCities();
     }
 }
