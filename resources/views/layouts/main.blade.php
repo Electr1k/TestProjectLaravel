@@ -12,9 +12,9 @@
 <body>
 <div class="container">
     <div class="topnav">
-        <a href="" class="main">Главная</a>
-        <a href="">О нас</a>
-        <a href="">Новости</a>
+        <a href="{{ route('main') }}" class="main">{{session('current_city')}}</a>
+        <a href="{{ route('news', ['city' => session('current_city')]) }}">Новости</a>
+        <a href="{{ route('about', ['city' => session('current_city')]) }}">О нас</a>
     </div>
     @yield('content')
 </div>
