@@ -18,8 +18,8 @@ URL: localhost:8080/api
    1) Клонировать репозиторий
    2) docker-compose build
    3) docker-compose up -d
-   4) docker-compose chmod -R gu+w storage
-   5) docker-compose chmod -R guo+w storage
+   4) docker exec test_app composer install
+   5) docker exec test_app chmod -R guo+w storage
    6) docker exec test_app php artisan cache:clear
    7) docker exec test_app php artisan migrate
    8) docker exec test_app php artisan parse:cities
