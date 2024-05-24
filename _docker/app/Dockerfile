@@ -17,16 +17,13 @@ RUN docker-php-ext-install pdo_pgsql
 
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
-USER www
-
 
 CMD chmod -R gu+w storage
 CMD chmod -R guo+w storage
 
 COPY ../.. /var/www
-COPY --chown=www:www ../.. /var/www
-
-
+RUN chown -R www-data:www-data \
+    /var/www/storage \
 
 EXPOSE 9000
 
