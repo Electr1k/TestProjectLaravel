@@ -22,4 +22,13 @@ URL: localhost:8080/api
    5) docker exec test_app chmod -R guo+w storage
    6) docker exec test_app php artisan cache:clear
    7) docker exec test_app php artisan migrate
-   8) docker exec test_app php artisan parse:cities
+   8) docker exec test_app php artisan parse:cities<br>
+2) Локально: <br>
+   1) Клонировать репозиторий
+   2) Создать postgres юзера(TestProject, q1r) и бд TestProject. Env поменять host на localhost
+   3) php artisan migrate
+   4) php artisan parse:cities
+   5) php artisan serve
+
+Немного комментариев:<br>
+Парсер вынесен в отдельную команду php artisan parse:cities и парсит БД один раз перед стартом сервера. Помимо вкладки с городами сервисы можно вынести и для других групп, но на данном этапе у всех групп по одному эндпоинту и выносить логику из однометодных контроллеров в сервисы сейчас, на мой взгляд, смысла нет.
